@@ -1,0 +1,34 @@
+{
+  "name": "chakra-ui-admin-dashboard",
+  "version": "1.0.0",
+  "author": "maxkostinevich",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@chakra-ui/react": "^1.7.2",
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "css-loader": "^6.5.1",
+    "framer-motion": "^5.3.3",
+    "node-sass": "^6.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.52",
+    "@swc/core": "^1.2.112",
+    "html-webpack-plugin": "^5.5.0",
+    "swc-loader": "^0.1.15",
+    "terser-webpack-plugin": "^5.2.5",
+    "webpack": "^5.64.3",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.production.config.js",
+    "start": "webpack-dev-server --open"
+  }
+}

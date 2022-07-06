@@ -1,0 +1,92 @@
+import React from "react";
+import {
+  Flex,
+  Container,
+  Image,
+  Stack,
+  Link,
+  Text,
+  Icon,
+  Button,
+  Menu,
+  MenuItem,
+  MenuDivider,
+  MenuGroup,
+  MenuList,
+  MenuButton,
+} from "@chakra-ui/react";
+
+import { FaCog, FaChevronDown } from "react-icons/fa";
+
+import "./Nav.scss";
+
+export default function Nav() {
+  return (
+    <Flex
+      position={{ md: "fixed" }}
+      bg="#ffffff"
+      minH="4rem"
+      w="100%"
+      marginTop={{ md: "-4rem" }}
+      zIndex="99"
+    >
+      <Container maxW="container.lg" paddingTop="5px">
+        <Stack
+          direction={["column", "row"]}
+          alignItems={["flex-end", "center"]}
+        >
+          <Image
+            boxSize="54px"
+            fallbackSrc="https://user-images.githubusercontent.com/10295466/95871054-e472de00-0d75-11eb-93f4-2593ce275869.png"
+          />
+          <Text fontSize="xl" fontWeight="500">
+            Awesome app
+          </Text>
+          <Stack direction={["column", "row"]} style={{ marginLeft: "5rem" }}>
+            <Button colorScheme="navItem" variant="ghost">
+              Dashboard
+            </Button>
+            <Menu>
+              <MenuButton
+                as={Button}
+                colorScheme="navItem"
+                variant="ghost"
+                rightIcon={<Icon as={FaChevronDown} color="navItem.500" />}
+              >
+                Users
+              </MenuButton>
+              <MenuList>
+                <MenuItem>View All</MenuItem>
+                <MenuDivider />
+                <MenuItem>Add New</MenuItem>
+              </MenuList>
+            </Menu>
+          </Stack>
+          <Stack direction={["column", "row"]} style={{ marginLeft: "auto" }}>
+            <Menu>
+              <MenuButton
+                as={Button}
+                colorScheme="navItem"
+                variant="ghost"
+                rightIcon={<Icon as={FaCog} color="navItem.500" />}
+              >
+                Settings
+              </MenuButton>
+              <MenuList>
+                <MenuGroup title="Profile">
+                  <MenuItem>My Account</MenuItem>
+                  <MenuItem>Payments </MenuItem>
+                </MenuGroup>
+                <MenuDivider />
+                <MenuGroup title="Help">
+                  <MenuItem>Docs</MenuItem>
+                  <MenuItem>FAQ</MenuItem>
+                </MenuGroup>
+              </MenuList>
+            </Menu>
+          </Stack>
+        </Stack>
+      </Container>
+    </Flex>
+  );
+}
